@@ -17,8 +17,8 @@ git config --global color.ui true
 git config --global user.name "precise32"
 git config --global user.email "precise32@vagrant.com"
 echo "*************************** Install MySQL ***************************"
-sudo debconf-set-selections <<< 'mysql-server-5.1 mysql-server/root_password password jasper3877'
-sudo debconf-set-selections <<< 'mysql-server-5.1 mysql-server/root_password_again password jasper3877'
+sudo debconf-set-selections <<< 'mysql-server-5.1 mysql-server/root_password password pass123'
+sudo debconf-set-selections <<< 'mysql-server-5.1 mysql-server/root_password_again password pass123'
 sudo apt-get -y install mysql-server mysql-client libmysqlclient-dev
 sudo apt-get -f -y install
 sudo apt-get -y install nodejs
@@ -26,6 +26,6 @@ echo "*************************** Ruby Version ***************************"
 ruby -v
 echo "*************************** Rails Version ***************************"
 rails -v
-echo "************************** Apache Version **************************"
-apache2 -V
+echo "************************** MySQL Password **************************"
+echo "pass123"
 echo "Shared Folder located at /vagrant"
