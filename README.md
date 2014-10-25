@@ -19,6 +19,7 @@ After Install<br />
 Add to Gemfile:<br />
 gem 'mysql2'<br />
 <br />
+-------------<br />
 Add to config/database.yml:<br />
 default: &default<br />
   adapter: mysql2<br />
@@ -38,6 +39,7 @@ test:<br />
 production:<br />
   <<: *default<br />
   database: database_production<br />
+-------------<br />
 <br />
 In app root folder:<br />
 migrate db:create<br />
