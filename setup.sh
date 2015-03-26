@@ -24,14 +24,15 @@ sudo debconf-set-selections <<< 'mysql-server-5.1 mysql-server/root_password pas
 sudo debconf-set-selections <<< 'mysql-server-5.1 mysql-server/root_password_again password pass123'
 sudo apt-get -y install mysql-server mysql-client libmysqlclient-dev
 sudo apt-get -f -y install
-echo "********************* Install Node/Javascript ***********************"
+echo "************************* Install Node *****************************"
+sudo apt-get -y install python-software-properties
+sudo add-apt-repository ppa:chris-lea/node.js -y
+sudo apt-get update
 sudo apt-get -y install nodejs
-sudo gem install execjs
-sudo gem install therubyracer
-echo ""
-echo ""
-echo ""
-echo ""
+echo " "
+echo " "
+echo " "
+echo " "
 echo "********************************************************************"
 echo "* Ruby Version                                                     *"
 ruby -v
