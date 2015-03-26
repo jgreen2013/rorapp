@@ -1,7 +1,11 @@
+echo "*************************** Update System ***************************"
 sudo apt-get -y update
+echo "************************** Install Apache ***************************"
 sudo apt-get -y install apache2 php5 libapache2-mod-php5
 sudo service apache2 restart
 sudo apt-get -y install curl
+echo "*************************** Install Ruby ***************************"
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 \curl -L https://get.rvm.io | bash -s stable
 source /etc/profile.d/rvm.sh
 rvm requirements
@@ -10,6 +14,7 @@ rvm use ruby --default
 sudo gem install execjs
 sudo gem install therubyracer
 rvm rubygems current
+echo "************************** Install Rails ***************************"
 gem install --no-rdoc --no-ri rails --force
 echo "*************************** Install Git ***************************"
 sudo apt-get -y install git-core
@@ -22,10 +27,16 @@ sudo debconf-set-selections <<< 'mysql-server-5.1 mysql-server/root_password_aga
 sudo apt-get -y install mysql-server mysql-client libmysqlclient-dev
 sudo apt-get -f -y install
 sudo apt-get -y install nodejs
-echo "*************************** Ruby Version ***************************"
+echo ""
+echo ""
+echo ""
+echo ""
+echo "********************************************************************"
+echo "* Ruby Version                                                     *"
 ruby -v
-echo "*************************** Rails Version ***************************"
+echo "* Rails Version                                                    *"
 rails -v
-echo "************************** MySQL Password **************************"
+echo "* MySQL Password                                                   *"
 echo "pass123"
 echo "Shared Folder located at /vagrant"
+echo "********************************************************************"
